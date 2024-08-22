@@ -1,0 +1,73 @@
+/* Modal.css */
+
+/* Styles for the modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Styles for the modal content */
+  .modal-content {
+    background: #FFEEAD; /* Soft cream background for the modal */
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    width: 90%;
+    max-width: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Styles for the close button */
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #96CEB4; /* Deep red color for the close button */
+  }
+  
+  /* Styles for the modal text */
+  .modal-text {
+    font-size: 1.2rem;
+    color: #A02334; /* Soft teal color for the text */
+    text-align: center;
+    margin: 0;
+  }
+  
+  /* Responsive adjustments for modal */
+  @media (max-width: 768px) {
+    .modal-text {
+      font-size: 1rem; /* Slightly smaller text on tablets */
+    }
+  
+    .modal-close {
+      font-size: 20px; /* Smaller close button on tablets */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .modal-content {
+      width: 95%; /* Ensure modal fits on very small screens */
+    }
+  
+    .modal-text {
+      font-size: 0.9rem; /* Smaller text on mobile */
+    }
+  
+    .modal-close {
+      font-size: 18px; /* Smaller close button on mobile */
+    }
+  }
+  

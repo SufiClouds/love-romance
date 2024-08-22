@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+/* ResponsiveButtons.css */
+
+/* General body styles for background */
+body {
+  background-color: #FFEEAD; /* Soft cream background */
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Styles for the button container */
+.button-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column; /* Arrange buttons vertically */
+  align-items: center; /* Center buttons horizontally */
+  justify-content: center; /* Center buttons vertically */
+  height: 100vh; /* Full viewport height */
+  gap: 10px; /* Space between buttons */
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Styles for the heading */
+.heading {
+  font-size: 2rem; /* Base font size for heading */
+  color: #A02334; /* Deep red color for heading */
+  text-align: center; /* Center heading text */
+  margin-bottom: 20px; /* Space between heading and buttons */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Styles for buttons */
+.btn {
+  background-color: #A02334; /* Deep red background */
+  color: #FFEEAD; /* Soft cream text color for contrast */
+  border: none;
+  border-radius: 5px;
+  padding: 15px 25px; /* Adjust padding for vertical buttons */
+  font-size: 1.2em; /* Responsive font size */
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  width: 16rem; /* Fixed width for larger screens */
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+  background-color: #FFAD60; /* Warm orange on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .button-container {
+    padding: 15px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .heading {
+    font-size: 1.5rem; /* Adjust heading size for tablets */
+  }
+
+  .btn {
+    width: 80%; /* Adjust width for tablets */
+    font-size: 1em; /* Slightly smaller text */
+  }
+}
+
+@media (max-width: 600px) {
+  .button-container {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons horizontally */
+  }
+
+  .heading {
+    font-size: 1.6rem; /* Smaller heading size for mobile */
+  }
+
+  .btn {
+    width: 100%; /* Full width on small screens */
+    font-size: 1.4em; /* Smaller text size for small screens */
+    padding: 12px 0; /* Adjust padding for smaller buttons */
+  }
+
+  .btn:last-child {
+    margin-bottom: 0; /* Remove margin for the last button */
   }
 }
