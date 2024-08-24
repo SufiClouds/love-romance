@@ -33,6 +33,8 @@
 
 // export default App;
 
+
+
 import React, { useState } from 'react';
 import Modal from './components/Model/Modal'; // Import the Modal component
 import './App.css';
@@ -40,38 +42,21 @@ import './App.css';
 const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
-  const [expectedClickIndex, setExpectedClickIndex] = useState(0);
-  const [warningMessage, setWarningMessage] = useState('');
+  
 
   // Define the sequence of button clicks
-  const buttonSequence = [
-    'Take Care', 
-    'Bhul Na Jana', 
-    'Khush Raho', 
-    'App ka Sath', 
-    'I Really Miss You'
-  ];
 
   const handleButtonClick = (message) => {
-    if (message === buttonSequence[expectedClickIndex]) {
-      // Correct button clicked
-      setModalMessage(message);
-      setIsModalOpen(true);
-      setExpectedClickIndex(prevIndex => prevIndex + 1);
-    } else {
-      // Incorrect button clicked
-      setWarningMessage('Wrong button clicked! Please follow the sequence.');
-    }
-  };
-
+        setModalMessage(message);
+        setIsModalOpen(true);
+      };
+ 
   const closeModal = () => {
     setIsModalOpen(false);
     setModalMessage('');
   };
 
-  const closeWarning = () => {
-    setWarningMessage('');
-  };
+ 
 
   return (
     <div className="button-container">
@@ -84,9 +69,6 @@ const App = () => {
 
       <Modal isOpen={isModalOpen} onClose={closeModal} message={modalMessage} />
 
-      {warningMessage && (
-        <Modal isOpen={!!warningMessage} onClose={closeWarning} message={warningMessage} />
-      )}
     </div>
   );
 };
